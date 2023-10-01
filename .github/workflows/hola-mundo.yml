@@ -1,1 +1,13 @@
-
+name: test Github Actions
+run-name: ¡Esto es una pruerba de GitHub Acrions!
+on: [push]
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Definir variable
+        run: echo "USERNAME=${{ github.actor}}" >> $GITHUB_ENV
+      - name: Correr Script
+        run: python hola_mundo.py
